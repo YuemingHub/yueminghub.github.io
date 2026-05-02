@@ -36,6 +36,19 @@
       justify-content: center;
     }
 
+    /* 脉动光晕动画 - 最外层（社会圈）外围光环 */
+    @keyframes vc-pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(201,169,110,0.25);
+      }
+      70% {
+        box-shadow: 0 0 0 20px rgba(201,169,110,0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(201,169,110,0);
+      }
+    }
+
     /* 每一圈都是圆角矩形，作为圆环 */
     .vc-ring {
       position: absolute;
@@ -48,6 +61,16 @@
                   box-shadow 0.3s ease,
                   border-color 0.3s ease;
       border: 2px solid transparent;
+    }
+
+    /* 第四圈 最外 - 呼吸灯效果 */
+    .vc-ring--4 {
+      width: 360px;
+      height: 360px;
+      background: #F5EFE4;
+      border-color: #E8DCCF;
+      z-index: 4;
+      animation: vc-pulse 2.5s ease-in-out infinite;
     }
 
     .vc-ring:hover {
@@ -564,7 +587,7 @@
                 </div>
                 <div class="vc-ring__tag">
                   <div class="vc-ring__tag-name">父母圈</div>
-                  <div class="vc-ring__tag-desc">家里好了一点</div>
+                  <div class="vc-ring__tag-desc">我让家里好了一点</div>
                 </div>
 
                 <!-- 第一圈 中心：自我圈 -->

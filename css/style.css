@@ -1421,12 +1421,21 @@ small, .small { font-size: 0.875rem; }
 }
 
 .mp-card__qr {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
   flex-shrink: 0;
   border-radius: 8px;
   background: #fff;
+  display: block;
+  margin: 12px auto;
+}
+
+.mp-card__qr-caption {
+  font-size: 0.75rem;
+  color: var(--body);
+  text-align: center;
+  margin-bottom: 8px;
 }
 
 .mp-card__content {
