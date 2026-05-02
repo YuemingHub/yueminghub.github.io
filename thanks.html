@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>消息已收到 | 月明家庭教育</title>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<!--[HEADER START]-->
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__brand">月明家庭教育</a>
+    <ul class="nav__links">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="about.html">关于</a></li>
+      <li><a href="system.html">体系</a></li>
+      <li><a href="value.html">价值四圈</a></li>
+      <li><a href="cases.html">案例</a></li>
+      <li><a href="contact.html" class="nav__cta">联系</a></li>
+    </ul>
+    <button class="nav__hamburger" aria-label="菜单" onclick="document.querySelector('.nav__mobile').classList.add('open'); document.body.style.overflow='hidden';">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav__mobile">
+  <button class="nav__mobile-close" onclick="document.querySelector('.nav__mobile').classList.remove('open'); document.body.style.overflow='';">&times;</button>
+  <a href="index.html">首页</a>
+  <a href="about.html">关于</a>
+  <a href="system.html">体系</a>
+  <a href="value.html">价值四圈</a>
+  <a href="cases.html">案例</a>
+  <a href="contact.html">联系</a>
+</div>
+<!--[HEADER END]-->
+
+<main>
+  <section class="hero" style="padding-bottom:0;">
+    <div class="container">
+      <h1 class="hero__title" style="font-size:2rem;">收到你的消息</h1>
+      <p class="hero__subtitle">我会在48小时内回复。</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:32px;">
+    <div class="container" style="max-width:600px; text-align:center;">
+      <div class="card reveal" style="padding:48px 40px; text-align:left;">
+        <h2 style="font-family:var(--font-serif); font-size:1.3rem; color:var(--heading); margin-bottom:24px; text-align:center;">在此之前……</h2>
+        <p style="font-size:0.95rem; color:var(--body); margin-bottom:24px;">可以先下载这份《家长自检句卡片》。</p>
+        <p style="font-size:0.875rem; color:var(--body); margin-bottom:32px;">日常可以用的话术参考，帮你先在生活中用起来。</p>
+        <div style="text-align:center;">
+          <a href="resources/parent-checklist.html" class="btn btn--primary" target="_blank">📋 下载家长自检句卡片</a>
+        </div>
+      </div>
+
+      <div style="margin-top:40px; text-align:center;" class="reveal">
+        <!-- 二维码引导 -->
+        <div class="qr-cards reveal" style="margin-bottom:40px;">
+          <div class="qr-card">
+            <img src="images/qr/qrcode-wechat-mp.jpg" alt="公众号二维码" class="qr-card__img" onerror="this.style.opacity='0.3'">
+            <div class="qr-card__name">📰 公众号</div>
+            <div class="qr-card__sub">青春期家庭指南</div>
+          </div>
+          <div class="qr-card">
+            <img src="images/qr/qrcode-douyin.png" alt="抖音二维码" class="qr-card__img" onerror="this.style.opacity='0.3'">
+            <div class="qr-card__name">📱 抖音</div>
+            <div class="qr-card__sub">YMHomelink</div>
+          </div>
+        </div>
+        <p style="font-size:0.8rem; color:#999; margin-bottom:12px;">扫码关注，查看更多真实案例和教育思考</p>
+        <a href="index.html" class="btn btn--ghost">← 返回首页</a>
+      </div>
+
+      <div style="padding-bottom:80px;"></div>
+    </div>
+  </section>
+</main>
+
+<!-- ========== FOOTER ========== -->
+<!--[FOOTER START]-->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__col">
+        <h4>月明家庭教育</h4>
+        <p>目标不是听话优秀，<br>而是自我运转的孩子。</p>
+      </div>
+      <div class="footer__col">
+        <h4>联系方式</h4>
+        <div class="footer__social">
+          <a href="https://mp.weixin.qq.com/" target="_blank" rel="noopener">📰 公众号：青春期家庭指南</a>
+        </div>
+        <div class="footer__social">
+          <a href="https://www.douyin.com/user/YMHomelink" target="_blank" rel="noopener">📱 抖音：YMHomelink</a>
+        </div>
+        <div class="footer__social">
+          <a href="#">📕 小红书：即将上线</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>快速链接</h4>
+        <a href="index.html">首页</a>
+        <a href="system.html">四层地图</a>
+        <a href="value.html">价值四圈</a>
+        <a href="cases.html">真实案例</a>
+        <a href="contact.html">联系我</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 月明家庭教育</span>
+      <span>目标不是听话优秀，而是自我运转的孩子</span>
+      <ul class="footer__bottom-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="system.html">四层地图</a></li>
+        <li><a href="value.html">价值四圈</a></li>
+        <li><a href="cases.html">案例</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<!--[FOOTER END]-->
+
+<script src="js/main.js"></script>
+</body>
+</html>

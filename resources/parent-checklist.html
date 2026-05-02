@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>家长自检句卡片 | 月明家庭教育</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #C9A96E;
+      --accent-dark: #B08A55;
+      --heading: #2C3E3B;
+      --body: #4A4A4A;
+      --bg: #FAF8F5;
+      --divider: #E8DCCF;
+    }
+
+    @page { size: A4; margin: 20mm; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      background: #fff;
+      color: var(--body);
+      font-size: 14px;
+      line-height: 1.8;
+      padding: 30px;
+      max-width: 210mm;
+      margin: 0 auto;
+    }
+
+    /* ---- Header ---- */
+    .header {
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--accent);
+      margin-bottom: 28px;
+    }
+    .header h1 {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 22px;
+      color: var(--heading);
+      margin-bottom: 6px;
+    }
+    .header p {
+      font-size: 12px;
+      color: var(--body);
+    }
+
+    /* ---- Core principle ---- */
+    .core {
+      background: rgba(201,169,110,0.08);
+      border: 1.5px solid var(--accent);
+      border-radius: 8px;
+      padding: 14px 20px;
+      text-align: center;
+      margin-bottom: 24px;
+      font-family: 'Noto Serif SC', serif;
+      font-size: 13px;
+      color: var(--heading);
+    }
+
+    /* ---- Grid ---- */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    /* ---- Card ---- */
+    .card {
+      border: 1px solid var(--divider);
+      border-radius: 10px;
+      padding: 18px 20px;
+      background: #fff;
+      break-inside: avoid;
+    }
+
+    .card__num {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 500;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 22px;
+      margin-bottom: 10px;
+    }
+
+    .card__scene {
+      font-size: 11px;
+      color: var(--accent-dark);
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .card__phrase {
+      font-size: 14px;
+      color: var(--heading);
+      font-weight: 500;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .card__note {
+      font-size: 11px;
+      color: #999;
+      font-style: italic;
+      border-top: 1px solid var(--divider);
+      padding-top: 8px;
+    }
+
+    /* ---- Footer ---- */
+    .footer {
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid var(--divider);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      color: #aaa;
+    }
+
+    /* ---- Print hints ---- */
+    @media screen {
+      body { background: var(--bg); padding: 40px 20px; }
+      .screen-note {
+        text-align: center;
+        font-size: 12px;
+        color: #999;
+        margin-bottom: 20px;
+        padding: 8px 16px;
+        background: rgba(0,0,0,0.03);
+        border-radius: 6px;
+      }
+    }
+
+    @media print {
+      body { padding: 0; }
+      .screen-note { display: none; }
+      .card { border-color: #ccc; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="screen-note">按 <strong>Ctrl + P</strong> 打印或另存为 PDF</div>
+
+  <div class="header">
+    <h1>家长自检句卡片</h1>
+    <p>10句核心话术 · 每天用一句，先稳住自己</p>
+  </div>
+
+  <div class="core">
+    核心口诀：先接住 → 再说事 → 别评价 → 留余地
+  </div>
+
+  <div class="grid">
+
+    <!-- 卡片1 -->
+    <div class="card">
+      <div class="card__num">1</div>
+      <div class="card__scene">孩子有情绪时</div>
+      <div class="card__phrase">"我听到你很……（复述情绪词），这个很正常。"</div>
+      <div class="card__note">先确认情绪，不急着给建议或讲道理</div>
+    </div>
+
+    <!-- 卡片2 -->
+    <div class="card">
+      <div class="card__num">2</div>
+      <div class="card__scene">孩子说了让你失望的话</div>
+      <div class="card__phrase">"我知道你今天……（描述事实），你现在感觉怎么样？"</div>
+      <div class="card__note">描述事实，不评判对错，打开对话空间</div>
+    </div>
+
+    <!-- 卡片3 -->
+    <div class="card">
+      <div class="card__num">3</div>
+      <div class="card__scene">想批评孩子时</div>
+      <div class="card__phrase">"我看到……（具体行为），我有一点担心，能说说吗？"</div>
+      <div class="card__note">用观察替代评判，把批评变成对话</div>
+    </div>
+
+    <!-- 卡片4 -->
+    <div class="card">
+      <div class="card__num">4</div>
+      <div class="card__scene">孩子做了一件小事</div>
+      <div class="card__phrase">"你自己……（具体行为），这叫……（价值命名）。"</div>
+      <div class="card__note">事实 + 价值命名，不要说"真棒"或"真乖"</div>
+    </div>
+
+    <!-- 卡片5 -->
+    <div class="card">
+      <div class="card__num">5</div>
+      <div class="card__scene">孩子帮了忙</div>
+      <div class="card__phrase">"你帮……做了……，家里因为你好了一点。"</div>
+      <div class="card__note">连接到"家庭圈"，让他看到自己的贡献</div>
+    </div>
+
+    <!-- 卡片6 -->
+    <div class="card">
+      <div class="card__num">6</div>
+      <div class="card__scene">孩子失败了或受挫</div>
+      <div class="card__phrase">"这件事没做成……（事实），你现在感觉怎么样？"</div>
+      <div class="card__note">先接住情绪，不急着鼓励或否定</div>
+    </div>
+
+    <!-- 卡片7 -->
+    <div class="card">
+      <div class="card__num">7</div>
+      <div class="card__scene">想说"但是"之前</div>
+      <div class="card__phrase">（停下来）把"但是"换成"同时"或"而"</div>
+      <div class="card__note">"不错，但是……" → "不错，同时……" 意义完全不同</div>
+    </div>
+
+    <!-- 卡片8 -->
+    <div class="card">
+      <div class="card__num">8</div>
+      <div class="card__scene">孩子不肯说话时</div>
+      <div class="card__phrase">"饭在桌上。"（说完就走，不追问，不等回应）</div>
+      <div class="card__note">有时候最重要的动作是说一句然后离开，给他空间</div>
+    </div>
+
+    <!-- 卡片9 -->
+    <div class="card">
+      <div class="card__num">9</div>
+      <div class="card__scene">设规矩或提醒规则时</div>
+      <div class="card__phrase">"我们的约定是……，现在……（描述现状）。"</div>
+      <div class="card__note">不指责，只陈述事实和约定，温和坚定</div>
+    </div>
+
+    <!-- 卡片10 -->
+    <div class="card">
+      <div class="card__num">10</div>
+      <div class="card__scene">每天睡前自问</div>
+      <div class="card__phrase">"今天我说的话，是接住了他，还是压住了他？"</div>
+      <div class="card__note">每天一次，刻意练习觉察，不需要自责</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <span>月明家庭教育 · 公众号：青春期家庭指南</span>
+    <span>抖音：YMHomelink</span>
+    <span>www.yueminghome.com</span>
+  </div>
+
+</body>
+</html>

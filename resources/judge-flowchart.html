@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>家庭教育四层判断流程图 | 月明家庭教育</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@300;400;500&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #C9A96E;
+      --accent-dark: #B08A55;
+      --l1: #E8A87C;
+      --l2: #D4A574;
+      --l3: #B8894A;
+      --l4: #9A7235;
+      --success: #7ab892;
+      --heading: #2C3E3B;
+      --body: #4A4A4A;
+      --bg: #FAF8F5;
+      --divider: #E8DCCF;
+    }
+
+    @page { size: A4 landscape; margin: 15mm; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans SC', 'PingFang SC', sans-serif;
+      background: #fff;
+      color: var(--body);
+      font-size: 12px;
+      line-height: 1.7;
+      padding: 20px;
+      max-width: 297mm;
+      margin: 0 auto;
+    }
+
+    /* ---- Header ---- */
+    .header {
+      text-align: center;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--accent);
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 20px;
+      color: var(--heading);
+      margin-bottom: 4px;
+    }
+    .header p {
+      font-size: 11px;
+      color: var(--body);
+    }
+
+    /* ---- Core note ---- */
+    .core-note {
+      text-align: center;
+      background: rgba(201,169,110,0.08);
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      padding: 8px 16px;
+      margin-bottom: 20px;
+      font-size: 12px;
+      color: var(--heading);
+      font-family: 'Noto Serif SC', serif;
+    }
+
+    /* ---- Flow ---- */
+    .flow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .flow-step {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+      max-width: 560px;
+    }
+
+    .flow-step:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .step-box {
+      flex: 1;
+      border-radius: 10px;
+      padding: 14px 20px;
+      background: #fff;
+      border-left: 4px solid var(--accent);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .step-box.l1 { border-left-color: var(--l1); }
+    .step-box.l2 { border-left-color: var(--l2); }
+    .step-box.l3 { border-left-color: var(--l3); }
+    .step-box.l4 { border-left-color: var(--l4); }
+    .step-box.success {
+      border-left-color: var(--success);
+      background: #f4faf6;
+    }
+
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 700;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      flex-shrink: 0;
+    }
+    .step-num.n1 { background: var(--l1); }
+    .step-num.n2 { background: var(--l2); }
+    .step-num.n3 { background: var(--l3); }
+    .step-num.n4 { background: var(--l4); }
+    .step-num.n5 { background: var(--success); }
+
+    .step-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #aaa;
+      margin-bottom: 4px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .step-q {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--heading);
+      margin-bottom: 4px;
+    }
+
+    .step-a {
+      font-size: 11px;
+      color: var(--body);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .step-a strong { color: var(--accent-dark); }
+
+    .flow-arrow {
+      text-align: center;
+      font-size: 18px;
+      color: var(--divider);
+      padding: 4px 0;
+      line-height: 1;
+    }
+
+    /* ---- Key ---- */
+    .key {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: rgba(201,169,110,0.05);
+      border-radius: 8px;
+      border: 1px solid var(--divider);
+    }
+
+    .key-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+    }
+
+    .key-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    /* ---- Principle ---- */
+    .principle {
+      text-align: center;
+      margin-top: 16px;
+      padding: 10px 20px;
+      background: var(--heading);
+      color: rgba(255,255,255,0.85);
+      border-radius: 8px;
+      font-size: 12px;
+      font-family: 'Noto Serif SC', serif;
+    }
+
+    /* ---- Footer ---- */
+    .footer {
+      margin-top: 16px;
+      padding-top: 10px;
+      border-top: 1px solid var(--divider);
+      display: flex;
+      justify-content: space-between;
+      font-size: 9px;
+      color: #bbb;
+    }
+
+    /* ---- Screen hint ---- */
+    @media screen {
+      body { background: var(--bg); padding: 30px 20px; }
+      .screen-note {
+        text-align: center;
+        font-size: 11px;
+        color: #999;
+        margin-bottom: 16px;
+        padding: 6px 12px;
+        background: rgba(0,0,0,0.03);
+        border-radius: 5px;
+      }
+    }
+
+    @media print {
+      body { padding: 0; }
+      .screen-note { display: none; }
+    }
+
+    /* ---- Mobile horizontal scroll hint ---- */
+    @media (max-width: 768px) {
+      .flow { flex-direction: column; }
+      .flow-step, .flow-step:nth-child(even) { flex-direction: column; }
+      .key { gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="screen-note">按 <strong>Ctrl + P</strong> 打印或另存为 PDF（横向效果最佳）</div>
+
+  <div class="header">
+    <h1>家庭教育四层判断流程图</h1>
+    <p>目标不是听话优秀，而是自我运转的孩子</p>
+  </div>
+
+  <div class="core-note">
+    口诀：不能跨层修——下层不稳，上层不建
+  </div>
+
+  <div class="flow">
+
+    <!-- Step 1 -->
+    <div class="flow-step">
+      <div class="step-num n1">1</div>
+      <div class="step-box l1">
+        <div class="step-label">第一层 · 关系底盘</div>
+        <div class="step-q">孩子能跟你好好说话吗？</div>
+        <div class="step-a">
+          <span>不能 →</span>
+          <strong>先止血，从这里开始</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-arrow">↓</div>
+
+    <!-- Step 2 -->
+    <div class="flow-step">
+      <div class="step-num n2">2</div>
+      <div class="step-box l2">
+        <div class="step-label">第二层 · 规则驱动</div>
+        <div class="step-q">家里有明确的规矩吗？</div>
+        <div class="step-a">
+          <span>没有 →</span>
+          <strong>立规矩，边界清晰</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-arrow">↓</div>
+
+    <!-- Step 3 -->
+    <div class="flow-step">
+      <div class="step-num n3">3</div>
+      <div class="step-box l3">
+        <div class="step-label">第三层 · 一致执行</div>
+        <div class="step-q">规矩能执行下去吗？</div>
+        <div class="step-a">
+          <span>不行 →</span>
+          <strong>坚持落地，温和坚定</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-arrow">↓</div>
+
+    <!-- Step 4 -->
+    <div class="flow-step">
+      <div class="step-num n4">4</div>
+      <div class="step-box l4">
+        <div class="step-label">第四层 · 长出价值</div>
+        <div class="step-q">孩子愿意自己去做吗？</div>
+        <div class="step-a">
+          <span>不愿意 →</span>
+          <strong>价值命名，帮Ta看见</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-arrow">↓</div>
+
+    <!-- Success -->
+    <div class="flow-step">
+      <div class="step-num n5">✓</div>
+      <div class="step-box success">
+        <div class="step-label">完成</div>
+        <div class="step-q" style="font-family:'Noto Serif SC',serif; font-size:14px;">你的孩子已经开始自我运转了</div>
+        <div class="step-a">
+          <strong style="color:#3D7A50;">四层都通，不再需要外部催促</strong>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="key">
+    <div class="key-item">
+      <div class="key-dot" style="background:var(--l1);"></div>
+      <span>第一层 · 关系底盘</span>
+    </div>
+    <div class="key-item">
+      <div class="key-dot" style="background:var(--l2);"></div>
+      <span>第二层 · 规则驱动</span>
+    </div>
+    <div class="key-item">
+      <div class="key-dot" style="background:var(--l3);"></div>
+      <span>第三层 · 一致执行</span>
+    </div>
+    <div class="key-item">
+      <div class="key-dot" style="background:var(--l4);"></div>
+      <span>第四层 · 长出价值</span>
+    </div>
+    <div class="key-item">
+      <div class="key-dot" style="background:var(--success);"></div>
+      <span>自我运转</span>
+    </div>
+  </div>
+
+  <div class="principle">
+    核心原则：每层都是下一层的基础，顺序乱了，努力就白费
+  </div>
+
+  <div class="footer">
+    <span>月明家庭教育</span>
+    <span>公众号：青春期家庭指南 · 抖音：YMHomelink</span>
+    <span>www.yueminghome.com</span>
+  </div>
+
+</body>
+</html>
