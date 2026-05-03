@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>消息已收到 | 月明家庭教育</title>
-  <meta name="description" content="">
+  <meta name="description" content="感谢你的消息，月明会在48小时内回复你。">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23C9A96E'/%3E%3Ctext x='16' y='20' text-anchor='middle' fill='white' font-size='14' font-family='serif'%3E%E6%9C%88%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -42,19 +43,19 @@
   <section class="hero">
     <div class="container">
       <div class="hero__kicker">收到</div>
-      <h1 class="hero__title" style="font-size:2rem;">收到你的消息</h1>
+      <h1 class="hero__title">收到你的消息</h1>
       <p class="hero__subtitle">我会在48小时内回复。</p>
     </div>
   </section>
 
   <section class="section" style="padding-top:32px;">
-    <div class="container" style="max-width:600px; text-align:center;">
+    <div class="container">
       <div class="card reveal" style="padding:48px 40px; text-align:left;">
         <h2 style="font-family:var(--font-serif); font-size:1.3rem; color:var(--heading); margin-bottom:24px; text-align:center;">在此之前……</h2>
         <p style="font-size:0.95rem; color:var(--body); margin-bottom:24px;">可以先下载这份《家长自检句卡片》。</p>
         <p style="font-size:0.875rem; color:var(--body); margin-bottom:32px;">日常可以用的话术参考，帮你先在生活中用起来。</p>
         <div style="text-align:center;">
-          <a href="resources/parent-checklist.pdf" class="btn btn--primary" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg> 下载家长自检句卡片</a>
+          <a href="resources/parent-checklist.html" class="btn btn--primary" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg> 下载家长自检句卡片</a>
         </div>
       </div>
 
@@ -62,8 +63,13 @@
         <p style="font-size:1rem; color:#4A4A4A; text-align:center; margin-bottom:24px;">在等待回复的同时，关注我的公众号和抖音，查看更多真实案例和教育思考。</p>
         <!-- 二维码引导 -->
         <div class="qr-cards reveal" style="margin-bottom:40px;">
+          <div class="qr-card qr-card--wechat">
+            <img src="images/qr/qrcode-wechat-mp.jpg" alt="个人微信二维码" class="qr-card__img" onerror="this.style.opacity='0.3'">
+            <div class="qr-card__name">个人微信</div>
+            <div class="qr-card__sub">YMHomeLink · 扫码添加</div>
+          </div>
           <div class="qr-card">
-            <img src="images/qr/qrcode-wechat-mp.jpg" alt="微信公众号二维码" class="qr-card__img" onerror="this.style.opacity='0.3'">
+            <img src="images/qr/qrcode-wechat-personal.png" alt="公众号二维码" class="qr-card__img" onerror="this.style.opacity='0.3'">
             <div class="qr-card__name">公众号</div>
             <div class="qr-card__sub">青春期家庭指南</div>
           </div>
@@ -84,9 +90,9 @@
 
 <!-- CTA 低门槛行动引导 -->
 <section class="section" style="padding-top:32px; padding-bottom:40px;">
-  <div class="container" style="max-width:600px; text-align:center;">
-    <div class="cta-strip reveal" style="background:rgba(201,169,110,0.08); border:1px solid var(--divider); color:var(--body);">
-      <div class="cta-strip__text" style="color:var(--heading);">遇到卡点不知道怎么办？<strong>直接加我微信</strong>，简单说明情况，帮你判断卡在哪一层。</div>
+  <div class="container">
+    <div class="cta-strip reveal">
+      <div class="cta-strip__text">遇到卡点不知道怎么办？<strong>直接加我微信</strong>，简单说明情况，帮你判断卡在哪一层。</div>
       <img src="images/qr/qrcode-wechat-mp.jpg" alt="微信二维码" class="cta-strip__qr">
       <div class="cta-strip__label">微信 YMHomeLink · 扫码添加</div>
     </div>
@@ -111,7 +117,7 @@
           <a href="https://www.douyin.com/user/YMHomelink" target="_blank" rel="noopener">抖音：YMHomelink</a>
         </div>
         <div class="footer__social">
-          <a href="#">小红书：即将上线</a>
+          <a href="https://www.xiaohongshu.com/user/profile/your_id" target="_blank" rel="noopener">小红书：即将上线</a>
         </div>
       </div>
       <div class="footer__col">

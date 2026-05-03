@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>联系我 | 月明家庭教育</title>
-  <meta name="description" content="一对一家庭教育咨询、课程合作、教师培训——一起做点什么。">
+  <meta name="description" content="一对一家庭教育咨询、课程合作——一起做点什么。">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23C9A96E'/%3E%3Ctext x='16' y='20' text-anchor='middle' fill='white' font-size='14' font-family='serif'%3E%E6%9C%88%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -49,27 +50,37 @@
 
   <section class="section" style="padding-top:0">
     <div class="container">
-      <!-- 深度咨询（一句话 + 大文本框） -->
       <div class="contact-deep reveal">
         <div class="contact-deep__intro">
           <h2>说说你现在的情况</h2>
           <p>不用组织语言，想到什么说什么。把困惑写下来，我来看。</p>
+          <div class="contact-deep__checklist">
+            <p class="contact-deep__checklist-title">我可以帮你判断：</p>
+            <ul>
+              <li>你家现在卡在哪一层</li>
+              <li>下一步最该做什么</li>
+              <li>需不需要深度咨询</li>
+            </ul>
+          </div>
         </div>
-        <form class="contact-deep__form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="setTimeout(function(){window.location.href='thanks.html';},500);">
-          <textarea name="message" required placeholder="孩子多大了？现在是什么情况？让你最头疼的是什么？你试过什么方法？……想说多少说多少，想到什么说什么，不用组织语言。" rows="8"></textarea>
-          <div class="contact-deep__row">
-            <input type="text" name="name" placeholder="你的称呼（选填）">
-            <input type="email" name="email" placeholder="邮箱（选填，想要回复）">
+        <form class="contact-deep__form" action="https://formspree.io/f/xzdodazd" method="POST" onsubmit="setTimeout(function(){window.location.href='thanks.html';},500);">
+          <div class="contact-deep__field">
+            <label class="contact-deep__label">你的情况</label>
+            <textarea name="message" required placeholder="孩子多大了？现在是什么情况？让你最头疼的是什么？你试过什么方法？……想说多少说多少。" rows="5"></textarea>
+          </div>
+          <div class="contact-deep__field-row">
+            <div class="contact-deep__field">
+              <label class="contact-deep__label">称呼 <span style="font-weight:400;opacity:0.5;">（选填）</span></label>
+              <input type="text" name="name" placeholder="怎么称呼你">
+            </div>
+            <div class="contact-deep__field">
+              <label class="contact-deep__label">邮箱 <span style="font-weight:400;opacity:0.5;">（想要回复）</span></label>
+              <input type="email" name="email" placeholder="your@email.com">
+            </div>
           </div>
           <input type="hidden" name="_next" value="thanks.html">
-          <button type="submit" class="btn btn--primary">发出去 →</button>
+          <button type="submit" class="btn btn--primary contact-deep__submit">发出去 →</button>
         </form>
-        <div class="contact-deep__alt">
-          <span>想说更快？</span>
-          <a href="javascript:;" onclick="document.querySelector('.contact-wechat').scrollIntoView({behavior:'smooth'});">扫码微信说 ↑</a>
-          <span>或</span>
-          <a href="https://mp.weixin.qq.com/" target="_blank" rel="noopener">公众号留言</a>
-        </div>
       </div>
 
         <!-- 其他联系方式 -->
@@ -131,13 +142,13 @@
       <div class="footer__col">
         <h4>联系方式</h4>
         <div class="footer__social">
-          <a href="https://mp.weixin.qq.com/" target="_blank" rel="noopener"><!-- TODO: 替换为真实公众号主页链接 -->公众号：青春期家庭指南</a>
+          <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&amp;__biz=Mzg5OTk3MTc1Ng==" target="_blank" rel="noopener">公众号：青春期家庭指南</a>
         </div>
         <div class="footer__social">
           <a href="https://www.douyin.com/user/YMHomelink" target="_blank" rel="noopener">抖音：YMHomelink</a>
         </div>
         <div class="footer__social">
-          <a href="#">小红书：即将上线</a>
+          <a href="https://www.xiaohongshu.com/user/profile/your_id" target="_blank" rel="noopener">小红书：即将上线</a>
         </div>
       </div>
       <div class="footer__col">
