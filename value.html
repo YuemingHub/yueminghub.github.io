@@ -75,61 +75,121 @@
       <!-- 同心圆核心区域 -->
       <div class="vc-section reveal">
         <p class="vc-hint">点击每一圈，看看孩子已经做到了什么</p>
-        <div class="vc-circles">
+        <div class="vc-circles" id="vc-circles">
           <!-- 第四圈 最外层：社会圈 -->
-          <div class="vc-ring vc-ring--4" data-ring="4">
-            <div class="vc-ring__label">
-              <div class="vc-ring__name">社会圈</div>
+          <div class="vc-ring vc-ring--4 locked" data-ring="4">
+            <div class="vc-ring__lock-overlay">
+              <div class="vc-ring__lock-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0110 0v4"/>
+                </svg>
+              </div>
             </div>
-            <div class="vc-ring__tag">
-              <div class="vc-ring__tag-name">社会圈</div>
-              <div class="vc-ring__tag-desc">我能帮助别人</div>
+            <div class="vc-ring__content">
+              <div class="vc-ring__name">第四圈</div>
+              <div class="vc-ring__desc">我能帮助别人</div>
             </div>
             <!-- 第三圈：家庭圈 -->
-            <div class="vc-ring vc-ring--3" data-ring="3">
-              <div class="vc-ring__label">
-                <div class="vc-ring__name">家庭圈</div>
+            <div class="vc-ring vc-ring--3 locked" data-ring="3">
+              <div class="vc-ring__lock-overlay">
+                <div class="vc-ring__lock-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0110 0v4"/>
+                  </svg>
+                </div>
               </div>
-              <div class="vc-ring__tag">
-                <div class="vc-ring__tag-name">家庭圈</div>
-                <div class="vc-ring__tag-desc">我是家里重要的人</div>
+              <div class="vc-ring__content">
+                <div class="vc-ring__name">第三圈</div>
+                <div class="vc-ring__desc">我是家里重要的人</div>
               </div>
               <!-- 第二圈：父母圈 -->
-              <div class="vc-ring vc-ring--2" data-ring="2">
-                <div class="vc-ring__label">
-                  <div class="vc-ring__name">父母圈</div>
+              <div class="vc-ring vc-ring--2 locked" data-ring="2">
+                <div class="vc-ring__lock-overlay">
+                  <div class="vc-ring__lock-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                      <path d="M7 11V7a5 5 0 0110 0v4"/>
+                    </svg>
+                  </div>
                 </div>
-                <div class="vc-ring__tag">
-                  <div class="vc-ring__tag-name">父母圈</div>
-                  <div class="vc-ring__tag-desc">我让家里好了一点</div>
+                <div class="vc-ring__content">
+                  <div class="vc-ring__name">第二圈</div>
+                  <div class="vc-ring__desc">我让家里好了一点</div>
                 </div>
                 <!-- 第一圈 中心：自我圈 -->
-                <div class="vc-ring vc-ring--1" data-ring="1">
-                  <div class="vc-ring__label">
-                    <div class="vc-ring__name">自我圈</div>
-                    <div class="vc-ring__desc">我能管住自己</div>
-                  </div>
-                  <div class="vc-ring__tag">
-                    <div class="vc-ring__tag-name">自我圈</div>
-                    <div class="vc-ring__tag-desc">我能管住自己</div>
+                <div class="vc-ring vc-ring--1 unlocked" data-ring="1">
+                  <div class="vc-ring__inner">
+                    <div class="vc-ring__pulse"></div>
+                    <div class="vc-ring__content">
+                      <div class="vc-ring__name">第一圈</div>
+                      <div class="vc-ring__desc">我能管住自己</div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
+          <!-- 手指引导动画（初始） -->
+          <div class="vc-finger-guide" id="vc-finger-guide">
+            <div class="vc-finger-guide__hand">
+              <svg width="40" height="50" viewBox="0 0 40 50" fill="none">
+                <path d="M20 8 C20 4, 24 2, 26 4 C28 6, 26 10, 24 12 L26 42 C26 46, 22 48, 18 46 C14 44, 14 40, 16 38 L12 20 C10 16, 12 12, 16 14 C18 15, 18 18, 16 20 L20 8 Z" fill="#FFB74D" stroke="#E65100" stroke-width="1"/>
+                <path d="M16 14 C16 14, 14 10, 16 8 C18 6, 20 8, 20 10" fill="none" stroke="#E65100" stroke-width="1"/>
+                <circle cx="14" cy="8" r="1.5" fill="#E65100"/>
+                <circle cx="18" cy="6" r="1.5" fill="#E65100"/>
+                <circle cx="22" cy="8" r="1.5" fill="#E65100"/>
+              </svg>
+            </div>
+            <div class="vc-finger-guide__text">点击中心圆开始</div>
+          </div>
+
+          <!-- 每次首次点击的引导动画 -->
+          <div class="vc-finger-hint" id="vc-finger-hint">
+            <div class="vc-finger-hint__hand">
+              <svg width="32" height="40" viewBox="0 0 40 50" fill="none">
+                <path d="M20 8 C20 4, 24 2, 26 4 C28 6, 26 10, 24 12 L26 42 C26 46, 22 48, 18 46 C14 44, 14 40, 16 38 L12 20 C10 16, 12 12, 16 14 C18 15, 18 18, 16 20 L20 8 Z" fill="#FFCC80" stroke="#E65100" stroke-width="1"/>
+                <path d="M16 14 C16 14, 14 10, 16 8 C18 6, 20 8, 20 10" fill="none" stroke="#E65100" stroke-width="1"/>
+              </svg>
+            </div>
+          </div>
+
           <!-- 话术气泡 -->
           <div class="vc-bubble" id="vc-bubble">
             <button class="vc-bubble__close" onclick="closeBubble()">&times;</button>
-            <div class="vc-bubble__label" id="vc-bubble-label">第一圈 · 自我圈</div>
+            <div class="vc-bubble__header">
+              <span class="vc-bubble__label" id="vc-bubble-label">第一圈 · 自我圈</span>
+              <span class="vc-bubble__level" id="vc-bubble-level">1/4</span>
+            </div>
             <div class="vc-bubble__title" id="vc-bubble-title">我能管住自己</div>
             <div class="vc-bubble__def" id="vc-bubble-def">孩子看到——我的行为对我自己有积极影响。</div>
             <div class="vc-bubble__speech" id="vc-bubble-speech1">"你自己设了闹钟，这说明你是能管理自己的人。"</div>
             <div class="vc-bubble__speech" id="vc-bubble-speech2">"你今天没有发脾气就把事情说清楚了。这叫自我控制。"</div>
             <div class="vc-bubble__question" id="vc-bubble-question">你觉得，这件事里你做得最好的是什么？</div>
             <div class="vc-bubble__note" id="vc-bubble-note">最核心的一圈，也是所有价值的起点</div>
+            <div class="vc-bubble__next" id="vc-bubble-next">点击外圈继续 →</div>
+          </div>
+
+          <!-- 解锁提示动画 -->
+          <div class="vc-unlock-hint" id="vc-unlock-hint">
+            <div class="vc-unlock-hint__text"></div>
+            <div class="vc-unlock-hint__arrow">→</div>
           </div>
         </div>
+
+        <!-- 进度指示器 -->
+        <div class="vc-progress">
+          <div class="vc-progress__dot active" data-progress="1"></div>
+          <div class="vc-progress__line"></div>
+          <div class="vc-progress__dot" data-progress="2"></div>
+          <div class="vc-progress__line"></div>
+          <div class="vc-progress__dot" data-progress="3"></div>
+          <div class="vc-progress__line"></div>
+          <div class="vc-progress__dot" data-progress="4"></div>
+        </div>
+        <p class="vc-progress__hint" id="vc-progress-hint">点击中心圆，开启价值之旅</p>
       </div>
 
       <div class="divider"></div>
