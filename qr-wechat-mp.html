@@ -22,7 +22,7 @@
       padding: 48px 40px;
       box-shadow: var(--shadow-card);
       text-align: center;
-      max-width: 400px;
+      max-width: 560px;
     }
     .qr-page__title {
       font-family: var(--font-serif);
@@ -36,8 +36,9 @@
       margin-bottom: 32px;
     }
     .qr-page__img {
-      width: 280px;
-      height: 280px;
+      width: 100%;
+      max-width: 420px;
+      height: auto;
       margin: 0 auto 24px;
       border-radius: 8px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.08);
@@ -66,10 +67,10 @@
 <body>
   <div class="qr-page">
     <div class="qr-page__card">
-      <div class="qr-page__title">关注公众号</div>
-      <div class="qr-page__subtitle">青春期家庭指南</div>
-      <img src="images/qr/qrcode-wechat-mp.jpg" alt="公众号二维码" class="qr-page__img">
-      <div class="qr-page__hint">打开微信扫一扫</div>
+      <div class="qr-page__title">关注公众号：青春期家庭指南</div>
+      <div class="qr-page__subtitle">打开微信，搜索「青春期家庭指南」</div>
+      <img src="images/qr/wechat-search-combo-color.png" alt="微信搜索公众号：青春期家庭指南" class="qr-page__img">
+      <div class="qr-page__hint">持续整理家庭教育观察、真实案例复盘和给家长的沟通提醒。</div>
       <a href="index.html" class="qr-page__back">← 返回首页</a>
     </div>
   </div>

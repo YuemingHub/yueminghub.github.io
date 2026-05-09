@@ -1565,9 +1565,11 @@ input::placeholder {
   color: var(--body);
 }
 
-.qr-card--wechat .qr-card__img {
-  width: 140px;
-  height: 140px;
+.qr-card__img--search {
+  width: 180px;
+  height: auto;
+  max-height: 100px;
+  padding: 8px;
 }
 
 /* ============================================
@@ -1787,6 +1789,12 @@ input::placeholder {
   background: #fff;
   display: block;
   margin: 12px auto;
+}
+
+.mp-card__qr--search {
+  width: 260px;
+  height: auto;
+  max-width: 100%;
 }
 
 .mp-card__qr-caption {
