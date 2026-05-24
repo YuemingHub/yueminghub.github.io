@@ -1,0 +1,4 @@
+﻿User-agent: *
+Allow: /
+
+Sitemap: https://yueminghome.github.io/Home-teach/sitemap.xml

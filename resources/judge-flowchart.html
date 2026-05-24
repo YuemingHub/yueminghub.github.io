@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>家庭教育四层判断流程图 | 月明家庭教育</title>
+  <title>家庭教育四层判断流程图 | 月明·向未来家庭教育</title>
+  <meta name="description" content="可打印资源页，适合在浏览器中直接打开，再按 Ctrl + P 打印或另存为 PDF。">
+  <meta name="theme-color" content="#245C4D">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://yueminghome.github.io/Home-teach/resources/judge-flowchart.html">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23C9A96E'/%3E%3Ctext x='16' y='20' text-anchor='middle' fill='white' font-size='14' font-family='serif'%3E%E6%9C%88%3C/text%3E%3C/svg%3E">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@300;400;500&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --accent: #C9A96E;
@@ -25,7 +28,7 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Noto Sans SC', 'PingFang SC', sans-serif;
+      font-family: 'Microsoft YaHei UI', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', sans-serif;
       background: #fff;
       color: var(--body);
       font-size: 12px;
@@ -35,7 +38,6 @@
       margin: 0 auto;
     }
 
-    /* ---- Header ---- */
     .header {
       text-align: center;
       padding-bottom: 14px;
@@ -43,7 +45,7 @@
       margin-bottom: 20px;
     }
     .header h1 {
-      font-family: 'Noto Serif SC', serif;
+      font-family: 'SimSun', 'Songti SC', serif;
       font-size: 20px;
       color: var(--heading);
       margin-bottom: 4px;
@@ -53,7 +55,6 @@
       color: var(--body);
     }
 
-    /* ---- Core note ---- */
     .core-note {
       text-align: center;
       background: rgba(201,169,110,0.08);
@@ -63,10 +64,9 @@
       margin-bottom: 20px;
       font-size: 12px;
       color: var(--heading);
-      font-family: 'Noto Serif SC', serif;
+      font-family: 'SimSun', 'Songti SC', serif;
     }
 
-    /* ---- Flow ---- */
     .flow {
       display: flex;
       flex-direction: column;
@@ -114,7 +114,7 @@
       font-size: 11px;
       font-weight: 700;
       color: #fff;
-      font-family: 'Inter', sans-serif;
+      font-family: Arial, sans-serif;
       flex-shrink: 0;
     }
     .step-num.n1 { background: var(--l1); }
@@ -126,16 +126,15 @@
     .step-label {
       font-size: 10px;
       font-weight: 700;
-      text-transform: uppercase;
       letter-spacing: 0.05em;
-      color: #aaa;
+      color: #888;
       margin-bottom: 4px;
-      font-family: 'Inter', sans-serif;
+      font-family: Arial, sans-serif;
     }
 
     .step-q {
       font-size: 13px;
-      font-weight: 500;
+      font-weight: 700;
       color: var(--heading);
       margin-bottom: 4px;
     }
@@ -159,7 +158,6 @@
       line-height: 1;
     }
 
-    /* ---- Key ---- */
     .key {
       display: flex;
       justify-content: center;
@@ -185,19 +183,17 @@
       border-radius: 50%;
     }
 
-    /* ---- Principle ---- */
     .principle {
       text-align: center;
       margin-top: 16px;
       padding: 10px 20px;
       background: var(--heading);
-      color: rgba(255,255,255,0.85);
+      color: rgba(255,255,255,0.88);
       border-radius: 8px;
       font-size: 12px;
-      font-family: 'Noto Serif SC', serif;
+      font-family: 'SimSun', 'Songti SC', serif;
     }
 
-    /* ---- Footer ---- */
     .footer {
       margin-top: 16px;
       padding-top: 10px;
@@ -205,10 +201,22 @@
       display: flex;
       justify-content: space-between;
       font-size: 9px;
-      color: #bbb;
+      color: #999;
+      gap: 12px;
     }
 
-    /* ---- Screen hint ---- */
+    .back-link {
+      text-align: center;
+      margin: 18px 0 6px;
+      font-size: 12px;
+    }
+
+    .back-link a {
+      color: #245C4D;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
     @media screen {
       body { background: var(--bg); padding: 30px 20px; }
       .screen-note {
@@ -224,14 +232,13 @@
 
     @media print {
       body { padding: 0; }
-      .screen-note { display: none; }
+      .screen-note, .back-link { display: none; }
     }
 
-    /* ---- Mobile horizontal scroll hint ---- */
     @media (max-width: 768px) {
-      .flow { flex-direction: column; }
       .flow-step, .flow-step:nth-child(even) { flex-direction: column; }
       .key { gap: 12px; }
+      .footer { flex-direction: column; align-items: center; text-align: center; }
     }
   </style>
 </head>
@@ -241,7 +248,7 @@
 
   <div class="header">
     <h1>家庭教育四层判断流程图</h1>
-    <p>目标不是听话优秀，而是自我运转的孩子</p>
+    <p>目标不是听话优秀，而是让孩子慢慢长出自我运转能力</p>
   </div>
 
   <div class="core-note">
@@ -249,113 +256,78 @@
   </div>
 
   <div class="flow">
-
-    <!-- Step 1 -->
     <div class="flow-step">
       <div class="step-num n1">1</div>
       <div class="step-box l1">
         <div class="step-label">第一层 · 关系底盘</div>
-        <div class="step-q">孩子能跟你好好说话吗？</div>
-        <div class="step-a">
-          <span>不能 →</span>
-          <strong>先止血，从这里开始</strong>
-        </div>
+        <div class="step-q">孩子还愿不愿意待在关系里？</div>
+        <div class="step-a"><span>如果不愿意 →</span><strong>先止血，先修关系感受</strong></div>
       </div>
     </div>
 
     <div class="flow-arrow">↓</div>
 
-    <!-- Step 2 -->
     <div class="flow-step">
       <div class="step-num n2">2</div>
       <div class="step-box l2">
-        <div class="step-label">第二层 · 规则驱动</div>
-        <div class="step-q">家里有明确的规矩吗？</div>
-        <div class="step-a">
-          <span>没有 →</span>
-          <strong>立规矩，边界清晰</strong>
-        </div>
+        <div class="step-label">第二层 · 现实边界</div>
+        <div class="step-q">家里有没有稳定、清楚、可预期的边界？</div>
+        <div class="step-a"><span>如果没有 →</span><strong>先立住少量但真实的边界</strong></div>
       </div>
     </div>
 
     <div class="flow-arrow">↓</div>
 
-    <!-- Step 3 -->
     <div class="flow-step">
       <div class="step-num n3">3</div>
       <div class="step-box l3">
         <div class="step-label">第三层 · 一致执行</div>
-        <div class="step-q">规矩能执行下去吗？</div>
-        <div class="step-a">
-          <span>不行 →</span>
-          <strong>坚持落地，温和坚定</strong>
-        </div>
+        <div class="step-q">说过的话，能不能真的落到现实里？</div>
+        <div class="step-a"><span>如果不能 →</span><strong>先减少规则数量，把关键点做成现实</strong></div>
       </div>
     </div>
 
     <div class="flow-arrow">↓</div>
 
-    <!-- Step 4 -->
     <div class="flow-step">
       <div class="step-num n4">4</div>
       <div class="step-box l4">
-        <div class="step-label">第四层 · 长出价值</div>
-        <div class="step-q">孩子愿意自己去做吗？</div>
-        <div class="step-a">
-          <span>不愿意 →</span>
-          <strong>价值命名，帮Ta看见</strong>
-        </div>
+        <div class="step-label">第四层 · 价值长出</div>
+        <div class="step-q">孩子有没有开始愿意自己承担一点点？</div>
+        <div class="step-a"><span>如果没有 →</span><strong>先别空讲大道理，回到真实行为里命名价值</strong></div>
       </div>
     </div>
 
     <div class="flow-arrow">↓</div>
 
-    <!-- Success -->
     <div class="flow-step">
       <div class="step-num n5">✓</div>
       <div class="step-box success">
-        <div class="step-label">完成</div>
-        <div class="step-q" style="font-family:'Noto Serif SC',serif; font-size:14px;">你的孩子已经开始自我运转了</div>
-        <div class="step-a">
-          <strong style="color:#3D7A50;">四层都通，不再需要外部催促</strong>
-        </div>
+        <div class="step-label">开始稳下来</div>
+        <div class="step-q" style="font-family:'SimSun','Songti SC',serif;font-size:14px;">孩子开始从“被催着动”，慢慢转向“我愿意自己动一点”。</div>
+        <div class="step-a"><strong style="color:#3D7A50;">这时再往未来走，才不容易重新退回去。</strong></div>
       </div>
     </div>
-
   </div>
 
   <div class="key">
-    <div class="key-item">
-      <div class="key-dot" style="background:var(--l1);"></div>
-      <span>第一层 · 关系底盘</span>
-    </div>
-    <div class="key-item">
-      <div class="key-dot" style="background:var(--l2);"></div>
-      <span>第二层 · 规则驱动</span>
-    </div>
-    <div class="key-item">
-      <div class="key-dot" style="background:var(--l3);"></div>
-      <span>第三层 · 一致执行</span>
-    </div>
-    <div class="key-item">
-      <div class="key-dot" style="background:var(--l4);"></div>
-      <span>第四层 · 长出价值</span>
-    </div>
-    <div class="key-item">
-      <div class="key-dot" style="background:var(--success);"></div>
-      <span>自我运转</span>
-    </div>
+    <div class="key-item"><div class="key-dot" style="background:var(--l1);"></div><span>第一层 · 关系底盘</span></div>
+    <div class="key-item"><div class="key-dot" style="background:var(--l2);"></div><span>第二层 · 现实边界</span></div>
+    <div class="key-item"><div class="key-dot" style="background:var(--l3);"></div><span>第三层 · 一致执行</span></div>
+    <div class="key-item"><div class="key-dot" style="background:var(--l4);"></div><span>第四层 · 价值长出</span></div>
+    <div class="key-item"><div class="key-dot" style="background:var(--success);"></div><span>开始自我运转</span></div>
   </div>
 
   <div class="principle">
-    核心原则：每层都是下一层的基础，顺序乱了，努力就白费
+    核心原则：每层都是下一层的基础，顺序错了，再多努力也会变味
   </div>
 
   <div class="footer">
-    <span>月明家庭教育</span>
+    <span>月明·向未来家庭教育</span>
     <span>公众号：青春期家庭指南 · 抖音：YMHomelink</span>
-    <span>www.yueminghome.com</span>
+    <span>yueminghome.github.io/Home-teach</span>
   </div>
 
+  <div class="back-link"><a href="../index.html">返回主站</a></div>
 </body>
 </html>

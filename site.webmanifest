@@ -1,0 +1,18 @@
+﻿{
+  "name": "月明·向未来家庭教育",
+  "short_name": "月明家庭教育",
+  "start_url": "/Home-teach/",
+  "scope": "/Home-teach/",
+  "display": "standalone",
+  "background_color": "#f6fbf8",
+  "theme_color": "#245C4D",
+  "description": "从真实家庭现场里长出来的判断、支持与重新开始的低压力入口。",
+  "icons": [
+    {
+      "src": "/Home-teach/images/og-cover.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
