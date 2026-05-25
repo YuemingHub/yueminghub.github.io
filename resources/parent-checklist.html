@@ -1,200 +1,42 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>家长自检句卡片 | 月明·向未来家庭教育</title>
-  <meta name="description" content="可打印资源页，适合在浏览器中直接打开，再按 Ctrl + P 打印或另存为 PDF。">
-  <meta name="theme-color" content="#245C4D">
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://yueminghome.github.io/Home-teach/resources/parent-checklist.html">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23C9A96E'/%3E%3Ctext x='16' y='20' text-anchor='middle' fill='white' font-size='14' font-family='serif'%3E%E6%9C%88%3C/text%3E%3C/svg%3E">
-  <style>
-    :root {
-      --accent: #C9A96E;
-      --accent-dark: #B08A55;
-      --heading: #2C3E3B;
-      --body: #4A4A4A;
-      --bg: #FAF8F5;
-      --divider: #E8DCCF;
-    }
 
-    @page { size: A4; margin: 20mm; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#F7F3EA" />
+<link rel="stylesheet" href="../css/style.css" />
+<script defer src="../js/site-shell.js"></script>
+<script defer src="../js/site-ui.js"></script>
+<script defer src="../js/main.js"></script>
 
-    body {
-      font-family: 'Microsoft YaHei UI', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', sans-serif;
-      background: #fff;
-      color: var(--body);
-      font-size: 14px;
-      line-height: 1.8;
-      padding: 30px;
-      max-width: 210mm;
-      margin: 0 auto;
-    }
-
-    .header {
-      text-align: center;
-      padding-bottom: 20px;
-      border-bottom: 2px solid var(--accent);
-      margin-bottom: 28px;
-    }
-    .header h1 {
-      font-family: 'SimSun', 'Songti SC', serif;
-      font-size: 22px;
-      color: var(--heading);
-      margin-bottom: 6px;
-    }
-    .header p {
-      font-size: 12px;
-      color: var(--body);
-    }
-
-    .core {
-      background: rgba(201,169,110,0.08);
-      border: 1.5px solid var(--accent);
-      border-radius: 8px;
-      padding: 14px 20px;
-      text-align: center;
-      margin-bottom: 24px;
-      font-family: 'SimSun', 'Songti SC', serif;
-      font-size: 13px;
-      color: var(--heading);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .card {
-      border: 1px solid var(--divider);
-      border-radius: 10px;
-      padding: 18px 20px;
-      background: #fff;
-      break-inside: avoid;
-    }
-
-    .card__num {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      font-size: 11px;
-      font-weight: 700;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      text-align: center;
-      line-height: 22px;
-      margin-bottom: 10px;
-      font-family: Arial, sans-serif;
-    }
-
-    .card__scene {
-      font-size: 11px;
-      color: var(--accent-dark);
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .card__phrase {
-      font-size: 14px;
-      color: var(--heading);
-      font-weight: 700;
-      line-height: 1.6;
-      margin-bottom: 8px;
-    }
-
-    .card__note {
-      font-size: 11px;
-      color: #888;
-      font-style: italic;
-      border-top: 1px solid var(--divider);
-      padding-top: 8px;
-    }
-
-    .footer {
-      margin-top: 28px;
-      padding-top: 16px;
-      border-top: 1px solid var(--divider);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 10px;
-      color: #999;
-      gap: 12px;
-    }
-
-    .back-link {
-      text-align: center;
-      margin: 18px 0 6px;
-      font-size: 12px;
-    }
-
-    .back-link a {
-      color: #245C4D;
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    @media screen {
-      body { background: var(--bg); padding: 40px 20px; }
-      .screen-note {
-        text-align: center;
-        font-size: 12px;
-        color: #999;
-        margin-bottom: 20px;
-        padding: 8px 16px;
-        background: rgba(0,0,0,0.03);
-        border-radius: 6px;
-      }
-    }
-
-    @media print {
-      body { padding: 0; }
-      .screen-note, .back-link { display: none; }
-      .card { border-color: #ccc; }
-    }
-
-    @media (max-width: 768px) {
-      .grid { grid-template-columns: 1fr; }
-      .footer { flex-direction: column; text-align: center; }
-    }
-  </style>
+  <title>家长自检句卡｜向未来家庭教育</title>
+  <meta name="description" content="用于打印或保存的家长自检句卡。" />
 </head>
-<body>
-
-  <div class="screen-note">按 <strong>Ctrl + P</strong> 打印或另存为 PDF</div>
-
-  <div class="header">
-    <h1>家长自检句卡片</h1>
-    <p>10 句核心提醒 · 情绪高的时候先稳住自己，再处理事情</p>
-  </div>
-
-  <div class="core">
-    核心口诀：先接住 → 再说事 → 少评价 → 留余地
-  </div>
-
-  <div class="grid">
-    <div class="card"><div class="card__num">1</div><div class="card__scene">孩子情绪很高时</div><div class="card__phrase">“我听到你现在很难受，这个我先听见了。”</div><div class="card__note">先接住感受，不急着讲道理。</div></div>
-    <div class="card"><div class="card__num">2</div><div class="card__scene">你想立刻纠正时</div><div class="card__phrase">“这件事我们等一下再说，我先不在你最炸的时候压你。”</div><div class="card__note">先停手，减少二次伤害。</div></div>
-    <div class="card"><div class="card__num">3</div><div class="card__scene">想批评孩子时</div><div class="card__phrase">“我看到的是……（描述事实），不是你这个人不行。”</div><div class="card__note">只说事实，不贴人格标签。</div></div>
-    <div class="card"><div class="card__num">4</div><div class="card__scene">你很想追问时</div><div class="card__phrase">“你现在不想说也可以，我先不追。”</div><div class="card__note">有时不追，比追出更多防御更重要。</div></div>
-    <div class="card"><div class="card__num">5</div><div class="card__scene">要提醒规则时</div><div class="card__phrase">“我们的约定是……，现在现实是……”</div><div class="card__note">温和坚定地说边界，不带讽刺和威胁。</div></div>
-    <div class="card"><div class="card__num">6</div><div class="card__scene">孩子做了一点点时</div><div class="card__phrase">“你刚才自己把这件事往前推了一点。”</div><div class="card__note">命名真实动作，比空泛表扬更有用。</div></div>
-    <div class="card"><div class="card__num">7</div><div class="card__scene">你准备说“但是”时</div><div class="card__phrase">先停一下，把“但是”换成“同时”或“接下来”。</div><div class="card__note">减少一句话里前半句刚接住、后半句又否掉的感觉。</div></div>
-    <div class="card"><div class="card__num">8</div><div class="card__scene">孩子不肯说话时</div><div class="card__phrase">“饭在桌上。”“我在客厅。”说完就走。</div><div class="card__note">有些时候，留空间本身就是支持。</div></div>
-    <div class="card"><div class="card__num">9</div><div class="card__scene">你觉得特别无力时</div><div class="card__phrase">先问自己：现在卡的是关系、边界、执行，还是价值？</div><div class="card__note">不要在没看清层位时乱出手。</div></div>
-    <div class="card"><div class="card__num">10</div><div class="card__scene">每天睡前</div><div class="card__phrase">“我今天是在接住他，还是在压住他？”</div><div class="card__note">一天一次自检，不自责，只修正。</div></div>
-  </div>
-
-  <div class="footer">
-    <span>月明·向未来家庭教育 · 公众号：青春期家庭指南</span>
-    <span>抖音：YMHomelink</span>
-    <span>yueminghome.github.io/Home-teach</span>
-  </div>
-
-  <div class="back-link"><a href="../index.html">返回主站</a></div>
+<body class="calm-site inner-page print-page">
+  <div data-site-header></div>
+  <main id="main" class="page-main">
+    <section class="quiet-content">
+      <div class="section-shell text-flow">
+        <p class="eyebrow">可打印资源</p>
+        <h1>家长自检句卡</h1>
+        <div class="case-list">
+          <article class="case-card">
+            <h2>开口前</h2>
+            <p>我现在是想解决问题，还是想证明自己没有错？</p>
+          </article>
+          <article class="case-card">
+            <h2>冲突中</h2>
+            <p>这句话说出去，会让关系更稳，还是让孩子更想退？</p>
+          </article>
+          <article class="case-card">
+            <h2>结束后</h2>
+            <p>今天有没有哪一个瞬间，我们没有继续互相伤害？</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div data-site-footer></div>
 </body>
 </html>

@@ -1,101 +1,48 @@
-﻿(function () {
-  "use strict";
+(() => {
+  const home = document.body.classList.contains("calm-home");
+  if (!home) return;
 
-  document.addEventListener("DOMContentLoaded", function () {
-    initLayerStack();
-    initTimelineProgress();
-    initValueRings();
+  const awakeButton = document.querySelector("[data-awake-home]");
+  const checkSection = document.querySelector("#quiet-check");
+  const feelingButtons = [...document.querySelectorAll("[data-feeling]")];
+  const response = document.querySelector("[data-feeling-response]");
+  const responseTitle = document.querySelector("[data-response-title]");
+  const responseText = document.querySelector("[data-response-text]");
+
+  const copyMap = {
+    "一说就炸": ["先别急着把话说完。", "也许现在最需要的，是让每一次开口不再像点火。"],
+    "谁也不想再说": ["沉默不一定是不在乎。", "有时候，是这个家已经太累，需要先恢复一个安全的入口。"],
+    "孩子退回房间": ["退回去，常常是在自保。", "先不急着把孩子推出门，先找回最低压力的连接。"],
+    "我越管越乱": ["也许不是你不够努力。", "只是这个家的顺序已经乱了，先别继续加方法。"],
+    "我也快撑不住了": ["你也需要被放下来一点。", "一个家要往前走，父母不能一直靠硬撑。"]
+  };
+
+  awakeButton?.addEventListener("click", () => {
+    document.body.classList.add("is-awake");
+    checkSection?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
-  function reducedMotion() {
-    return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  }
+  feelingButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      feelingButtons.forEach((item) => item.classList.remove("is-selected"));
+      button.classList.add("is-selected");
 
-  function initLayerStack() {
-    var stacks = document.querySelectorAll("[data-layer-stack]");
-    if (!stacks.length) return;
+      const value = button.dataset.feeling || "";
+      const [title, text] = copyMap[value] || ["你不用一次讲完整个故事。", "先从眼前最卡的地方开始。"];
 
-    if (reducedMotion() || !("IntersectionObserver" in window)) {
-      stacks.forEach(function (stack) {
-        stack.querySelectorAll(".layer-stack__row").forEach(function (row) {
-          row.classList.add("is-lit");
-        });
-      });
-      return;
-    }
+      if (responseTitle) responseTitle.textContent = title;
+      if (responseText) responseText.textContent = text;
 
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        var stack = entry.target;
-        var rows = Array.prototype.slice.call(stack.querySelectorAll(".layer-stack__row"));
-        rows.reverse().forEach(function (row, idx) {
-          window.setTimeout(function () {
-            row.classList.add("is-lit");
-          }, idx * 280);
-        });
-        observer.unobserve(stack);
-      });
-    }, { threshold: 0.32 });
-
-    stacks.forEach(function (stack) { observer.observe(stack); });
-  }
-
-  function initTimelineProgress() {
-    var timelines = document.querySelectorAll(".timeline.is-progressive");
-    if (!timelines.length) return;
-
-    if (reducedMotion() || !("IntersectionObserver" in window)) {
-      timelines.forEach(function (timeline) {
-        timeline.querySelectorAll(".timeline-item").forEach(function (item) {
-          item.classList.add("is-lit");
-        });
-      });
-      return;
-    }
-
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-lit");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.4, rootMargin: "0px 0px -40px 0px" });
-
-    timelines.forEach(function (timeline) {
-      timeline.querySelectorAll(".timeline-item").forEach(function (item) {
-        observer.observe(item);
-      });
+      if (response) {
+        response.hidden = false;
+        response.animate(
+          [
+            { opacity: 0, transform: "translateY(12px)" },
+            { opacity: 1, transform: "translateY(0)" }
+          ],
+          { duration: 420, easing: "ease", fill: "both" }
+        );
+      }
     });
-  }
-
-  function initValueRings() {
-    var root = document.querySelector("[data-value-rings]");
-    if (!root) return;
-
-    var rings = Array.prototype.slice.call(root.querySelectorAll("[data-ring]"));
-    var copies = Array.prototype.slice.call(document.querySelectorAll("[data-ring-copy]"));
-    if (!rings.length) return;
-
-    function applyRing(key) {
-      rings.forEach(function (ring) {
-        ring.classList.toggle("is-active", ring.getAttribute("data-ring") === key);
-        ring.setAttribute("aria-pressed", ring.getAttribute("data-ring") === key ? "true" : "false");
-      });
-      copies.forEach(function (copy) {
-        copy.classList.toggle("is-active", copy.getAttribute("data-ring-copy") === key);
-      });
-    }
-
-    var defaultKey = rings[0].getAttribute("data-ring");
-    applyRing(defaultKey);
-
-    rings.forEach(function (ring) {
-      var key = ring.getAttribute("data-ring");
-      ring.addEventListener("mouseenter", function () { applyRing(key); });
-      ring.addEventListener("focus", function () { applyRing(key); });
-      ring.addEventListener("click", function () { applyRing(key); });
-    });
-  }
+  });
 })();

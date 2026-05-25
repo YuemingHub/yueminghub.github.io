@@ -1,39 +1,8 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://yueminghome.github.io/Home-teach/</loc>
-    <lastmod>2026-05-24</lastmod>
-  </url>
-  <url>
-    <loc>https://yueminghome.github.io/Home-teach/about.html</loc>
-    <lastmod>2026-05-24</lastmod>
-  </url>
-  <url>
-    <loc>https://yueminghome.github.io/Home-teach/system.html</loc>
-    <lastmod>2026-05-24</lastmod>
-  </url>
-  <url>
-    <loc>https://yueminghome.github.io/Home-teach/cases.html</loc>
-    <lastmod>2026-05-24</lastmod>
-  </url>
-  <url>
-    <loc>https://yueminghome.github.io/Home-teach/value.html</loc>
-    <lastmod>2026-05-24</lastmod>
-  </url>
-  <url>
-    <loc>https://yueminghome.github.io/Home-teach/engine.html</loc>
-    <lastmod>2026-05-24</lastmod>
-  </url>
-  <url>
-    <loc>https://yueminghome.github.io/Home-teach/contact.html</loc>
-    <lastmod>2026-05-24</lastmod>
-  </url>
-  <url>
-    <loc>https://yueminghome.github.io/Home-teach/resources/judge-flowchart.html</loc>
-    <lastmod>2026-05-24</lastmod>
-  </url>
-  <url>
-    <loc>https://yueminghome.github.io/Home-teach/resources/parent-checklist.html</loc>
-    <lastmod>2026-05-24</lastmod>
-  </url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://yueminghub.github.io/</loc></url>
+  <url><loc>https://yueminghub.github.io/system.html</loc></url>
+  <url><loc>https://yueminghub.github.io/cases.html</loc></url>
+  <url><loc>https://yueminghub.github.io/about.html</loc></url>
+  <url><loc>https://yueminghub.github.io/contact.html</loc></url>
 </urlset>
