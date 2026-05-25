@@ -5,7 +5,6 @@
     initMobileNav();
     initReveal();
     initAccordions();
-    initStickyCta();
   });
 
   function reducedMotion() {
@@ -173,26 +172,4 @@
     });
   }
 
-  function initStickyCta() {
-    var bar = document.querySelector("[data-sticky-cta]");
-    if (!bar) return;
-
-    function update() {
-      if (window.matchMedia("(min-width: 861px)").matches) {
-        bar.classList.remove("is-visible");
-        bar.setAttribute("aria-hidden", "true");
-        return;
-      }
-
-      var scrolled = window.scrollY + window.innerHeight;
-      var threshold = document.documentElement.scrollHeight * 0.5;
-      var visible = scrolled > threshold;
-      bar.classList.toggle("is-visible", visible);
-      bar.setAttribute("aria-hidden", visible ? "false" : "true");
-    }
-
-    window.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update);
-    update();
-  }
 })();
