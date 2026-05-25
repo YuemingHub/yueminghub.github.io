@@ -1,4 +1,42 @@
 (() => {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const revealTargets = [
+    ".path-section",
+    ".closing-breath",
+    ".path-card",
+    ".layer-card",
+    ".case-card",
+    ".soft-note",
+    ".contact-form",
+    ".contact-aside",
+    ".page-hero .section-shell.narrow",
+    ".quiet-content .section-shell.text-flow",
+    ".quiet-content > .section-shell:not(.contact-shell)"
+  ];
+
+  const revealItems = [...document.querySelectorAll(revealTargets.join(","))];
+  revealItems.forEach((item, index) => {
+    item.classList.add("reveal-item");
+    item.style.setProperty("--reveal-delay", `${Math.min(index % 4, 3) * 80}ms`);
+  });
+
+  if (reduceMotion) {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+  } else if (revealItems.length) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, {
+      threshold: 0.16,
+      rootMargin: "0px 0px -8% 0px"
+    });
+
+    revealItems.forEach((item) => observer.observe(item));
+  }
+
   const home = document.body.classList.contains("calm-home");
   if (!home) return;
 

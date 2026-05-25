@@ -49,6 +49,14 @@ body {
   letter-spacing: 0.02em;
 }
 
+body.calm-site {
+  background:
+    radial-gradient(circle at 18% 16%, rgba(246, 230, 175, 0.12), transparent 22rem),
+    radial-gradient(circle at 82% 14%, rgba(148, 172, 160, 0.14), transparent 24rem),
+    linear-gradient(180deg, #21322f 0%, var(--home-bg) 42%, var(--home-bg-deep) 100%);
+  color: var(--home-ink);
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -60,6 +68,13 @@ body::before {
   background-size: 46px 46px;
   mask-image: linear-gradient(to bottom, rgba(0,0,0,0.32), transparent 70%);
   z-index: -1;
+}
+
+body.calm-site::before {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.016) 1px, transparent 1px);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.44), transparent 78%);
 }
 
 a {
@@ -105,50 +120,42 @@ button {
 
 body.calm-home {
   background:
-    radial-gradient(circle at 18% 20%, rgba(246, 230, 175, 0.18), transparent 20rem),
-    radial-gradient(circle at 82% 16%, rgba(148, 172, 160, 0.16), transparent 22rem),
+    radial-gradient(circle at 18% 20%, rgba(246, 230, 175, 0.14), transparent 20rem),
+    radial-gradient(circle at 82% 16%, rgba(148, 172, 160, 0.13), transparent 22rem),
     radial-gradient(circle at 50% 72%, rgba(199, 164, 122, 0.12), transparent 22rem),
     linear-gradient(180deg, #20312e 0%, var(--home-bg) 42%, var(--home-bg-deep) 100%);
-  color: var(--home-ink);
 }
 
-body.calm-home::before {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.016) 1px, transparent 1px);
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.44), transparent 78%);
-}
-
-body.calm-home .site-header {
+body.calm-site .site-header {
   background: rgba(16, 27, 26, 0.56);
   border-bottom-color: rgba(246, 230, 175, 0.08);
 }
 
-body.calm-home .brand,
-body.calm-home .brand-text strong,
-body.calm-home .site-nav a,
-body.calm-home .nav-toggle {
+body.calm-site .brand,
+body.calm-site .brand-text strong,
+body.calm-site .site-nav a,
+body.calm-site .nav-toggle {
   color: var(--home-ink);
 }
 
-body.calm-home .brand-text span {
+body.calm-site .brand-text span {
   color: rgba(242, 236, 226, 0.56);
 }
 
-body.calm-home .brand-mark {
+body.calm-site .brand-mark {
   background:
     radial-gradient(circle at 35% 32%, #fff8dc 0 18%, var(--moon) 19% 56%, rgba(246, 230, 175, 0.18) 57% 100%);
   box-shadow: 0 0 0 8px rgba(246, 230, 175, 0.08);
 }
 
-body.calm-home .site-nav a:hover,
-body.calm-home .site-nav a:focus-visible,
-body.calm-home .site-nav a.is-active {
+body.calm-site .site-nav a:hover,
+body.calm-site .site-nav a:focus-visible,
+body.calm-site .site-nav a.is-active {
   background: rgba(255, 255, 255, 0.08);
   color: #fff9f0;
 }
 
-body.calm-home .nav-toggle {
+body.calm-site .nav-toggle {
   border-color: rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.04);
 }
@@ -267,20 +274,32 @@ body.calm-home .nav-toggle {
   position: relative;
   min-height: calc(100vh - 74px);
   display: grid;
-  place-items: center;
+  align-items: center;
   padding: 92px 20px 76px;
-  text-align: center;
+  text-align: left;
+}
+
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(16, 27, 26, 0.52) 0%, rgba(16, 27, 26, 0.32) 34%, rgba(16, 27, 26, 0.08) 58%, transparent 76%),
+    radial-gradient(circle at 68% 42%, rgba(246, 230, 175, 0.04), transparent 22rem);
+  z-index: 0;
 }
 
 .quiet-orbit {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: min(62vw, 520px);
+  top: 42%;
+  left: 72%;
+  width: min(32vw, 360px);
   aspect-ratio: 1;
-  transform: translate(-50%, -54%);
+  transform: translate(-50%, -50%);
   pointer-events: none;
-  opacity: 0.96;
+  opacity: 0.6;
+  z-index: 0;
 }
 
 .moon-core {
@@ -327,17 +346,22 @@ body.calm-home .nav-toggle {
 .hero-copy {
   position: relative;
   z-index: 1;
-  width: min(680px, 100%);
-  padding: 44px 22px;
+  width: min(600px, 100%);
+  margin-right: auto;
+  padding: 44px 32px;
   border-radius: var(--radius-xl);
 }
 
 body.calm-home .hero-copy {
-  padding: 48px 28px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
-  border: 1px solid var(--home-line);
-  box-shadow: var(--home-shadow);
-  backdrop-filter: blur(14px);
+  padding: 52px 36px;
+  background:
+    linear-gradient(180deg, rgba(21, 34, 32, 0.62), rgba(21, 34, 32, 0.32)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(246, 230, 175, 0.14);
+  box-shadow:
+    0 30px 90px rgba(3, 8, 8, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
 }
 
 .eyebrow {
@@ -363,29 +387,28 @@ h1 {
   letter-spacing: 0.01em;
 }
 
-body.calm-home h1,
-body.calm-home h2,
-body.calm-home h3,
-body.calm-home .hero-poem,
-body.calm-home .section-shell h2,
-body.calm-home .closing-breath p,
-body.calm-home .path-card a,
-body.calm-home .text-link,
-body.calm-home .contact-form label,
-body.calm-home .feeling-response p:first-child {
+body.calm-site h1,
+body.calm-site h2,
+body.calm-site h3,
+body.calm-site .section-shell h2,
+body.calm-site .closing-breath p,
+body.calm-site .path-card a,
+body.calm-site .text-link,
+body.calm-site .contact-form label,
+body.calm-site .feeling-response p:first-child {
   color: var(--home-ink);
 }
 
-body.calm-home .eyebrow,
-body.calm-home .path-number,
-body.calm-home .layer-card span,
-body.calm-home .case-tag {
+body.calm-site .eyebrow,
+body.calm-site .path-number,
+body.calm-site .layer-card span,
+body.calm-site .case-tag {
   color: var(--moon);
 }
 
 .hero-poem {
   margin: 28px auto 0;
-  max-width: 540px;
+  max-width: 23rem;
   font-family: var(--font-serif);
   font-size: clamp(18px, 2.6vw, 24px);
   line-height: 2.05;
@@ -393,24 +416,29 @@ body.calm-home .case-tag {
 
 .hero-poem.muted {
   margin-top: 22px;
-  color: rgba(46, 57, 53, 0.72);
+  color: rgba(46, 57, 53, 0.76);
   font-size: clamp(16px, 2vw, 20px);
 }
 
-body.calm-home .hero-poem,
-body.calm-home .hero-poem.muted,
-body.calm-home .section-lead,
-body.calm-home .page-lead,
-body.calm-home .path-card p,
-body.calm-home .layer-card p,
-body.calm-home .case-card p,
-body.calm-home .contact-aside p,
-body.calm-home .text-flow p,
-body.calm-home .quiet-content p,
-body.calm-home .feeling-response p + p,
-body.calm-home .footer-links a,
-body.calm-home .site-footer {
+body.calm-site .hero-poem,
+body.calm-site .hero-poem.muted,
+body.calm-site .section-lead,
+body.calm-site .page-lead,
+body.calm-site .path-card p,
+body.calm-site .layer-card p,
+body.calm-site .case-card p,
+body.calm-site .contact-aside p,
+body.calm-site .text-flow p,
+body.calm-site .quiet-content p,
+body.calm-site .feeling-response p + p,
+body.calm-site .footer-links a,
+body.calm-site .site-footer {
   color: var(--home-ink-soft);
+}
+
+body.calm-home .hero-poem,
+body.calm-home .hero-poem.muted {
+  text-shadow: 0 2px 20px rgba(16, 27, 26, 0.62);
 }
 
 .soft-button {
@@ -447,14 +475,14 @@ body.calm-home .site-footer {
   background: #1a312c;
 }
 
-body.calm-home .soft-button.primary {
+body.calm-site .soft-button.primary {
   background: #f1e3b7;
   color: #22302d;
   box-shadow: 0 18px 46px rgba(3, 8, 8, 0.28);
 }
 
-body.calm-home .soft-button.primary:hover,
-body.calm-home .soft-button.primary:focus-visible {
+body.calm-site .soft-button.primary:hover,
+body.calm-site .soft-button.primary:focus-visible {
   background: #f7e9be;
 }
 
@@ -470,15 +498,15 @@ body.calm-home .soft-button.primary:focus-visible {
   border-color: rgba(143, 175, 154, 0.45);
 }
 
-body.calm-home .soft-button.secondary {
+body.calm-site .soft-button.secondary {
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(246, 230, 175, 0.14);
   color: var(--home-ink);
   box-shadow: none;
 }
 
-body.calm-home .soft-button.secondary:hover,
-body.calm-home .soft-button.secondary:focus-visible {
+body.calm-site .soft-button.secondary:hover,
+body.calm-site .soft-button.secondary:focus-visible {
   background: rgba(255, 255, 255, 0.09);
   border-color: rgba(246, 230, 175, 0.26);
 }
@@ -565,7 +593,7 @@ body:not(.calm-home) .quiet-check {
   transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
 }
 
-body.calm-home .feeling-pill {
+body.calm-site .feeling-pill {
   border-color: rgba(246, 230, 175, 0.12);
   background: rgba(255, 255, 255, 0.05);
   color: var(--home-ink);
@@ -580,9 +608,9 @@ body.calm-home .feeling-pill {
   border-color: rgba(143, 175, 154, 0.55);
 }
 
-body.calm-home .feeling-pill:hover,
-body.calm-home .feeling-pill:focus-visible,
-body.calm-home .feeling-pill.is-selected {
+body.calm-site .feeling-pill:hover,
+body.calm-site .feeling-pill:focus-visible,
+body.calm-site .feeling-pill.is-selected {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(246, 230, 175, 0.24);
 }
@@ -597,13 +625,13 @@ body.calm-home .feeling-pill.is-selected {
   text-align: center;
 }
 
-body.calm-home .feeling-response,
-body.calm-home .path-card,
-body.calm-home .layer-card,
-body.calm-home .case-card,
-body.calm-home .contact-form,
-body.calm-home .contact-aside,
-body.calm-home .soft-note {
+body.calm-site .feeling-response,
+body.calm-site .path-card,
+body.calm-site .layer-card,
+body.calm-site .case-card,
+body.calm-site .contact-form,
+body.calm-site .contact-aside,
+body.calm-site .soft-note {
   border-color: var(--home-line);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.03));
   box-shadow: var(--home-shadow);
@@ -656,13 +684,14 @@ body.calm-home .soft-note {
 }
 
 .path-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   background: rgba(255, 255, 255, 0.62);
 }
 
-body.calm-home .path-card:hover,
-body.calm-home .layer-card:hover,
-body.calm-home .case-card:hover {
+body.calm-site .path-card:hover,
+body.calm-site .layer-card:hover,
+body.calm-site .case-card:hover {
+  transform: translateY(-6px);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.045));
 }
 
@@ -739,7 +768,7 @@ body.calm-home .case-card:hover {
   background: rgba(255, 248, 217, 0.46);
 }
 
-body.calm-home .soft-note {
+body.calm-site .soft-note {
   background: linear-gradient(180deg, rgba(246, 230, 175, 0.08), rgba(255, 255, 255, 0.03));
 }
 
@@ -868,6 +897,67 @@ body.calm-home .soft-note {
   box-shadow: 0 0 0 4px rgba(143, 175, 154, 0.16);
 }
 
+body.calm-site.inner-page .page-hero .section-shell.narrow,
+body.calm-site.inner-page .quiet-content .section-shell.text-flow,
+body.calm-site.inner-page .quiet-content > .section-shell:not(.contact-shell) {
+  padding: 34px;
+  border: 1px solid var(--home-line);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.028));
+  box-shadow: var(--home-shadow);
+  backdrop-filter: blur(12px);
+}
+
+body.calm-site.inner-page .page-hero {
+  padding-bottom: 30px;
+}
+
+body.calm-site.inner-page .quiet-content {
+  padding-top: 22px;
+}
+
+body.calm-site.inner-page .page-hero .section-shell.narrow {
+  max-width: 860px;
+}
+
+body.calm-site.inner-page .page-hero h1 {
+  max-width: 14ch;
+  font-size: clamp(34px, 5.4vw, 64px);
+}
+
+body.calm-site.inner-page .page-lead {
+  max-width: 40rem;
+}
+
+body.calm-site.inner-page .contact-shell {
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+body.calm-site.inner-page .contact-form input,
+body.calm-site.inner-page .contact-form textarea,
+body.calm-site.inner-page .contact-form select {
+  border-color: rgba(246, 230, 175, 0.14);
+  background: rgba(255, 255, 255, 0.045);
+  color: var(--home-ink);
+}
+
+body.calm-site.inner-page .contact-form input::placeholder,
+body.calm-site.inner-page .contact-form textarea::placeholder {
+  color: rgba(242, 236, 226, 0.46);
+}
+
+body.calm-site.inner-page .contact-form input:focus,
+body.calm-site.inner-page .contact-form textarea:focus,
+body.calm-site.inner-page .contact-form select:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(246, 230, 175, 0.28);
+  box-shadow: 0 0 0 4px rgba(246, 230, 175, 0.08);
+}
+
 .contact-aside h2 {
   font-size: 32px;
 }
@@ -891,7 +981,7 @@ body.calm-home .soft-note {
   color: rgba(46, 57, 53, 0.66);
 }
 
-body.calm-home .site-footer {
+body.calm-site .site-footer {
   border-top-color: rgba(246, 230, 175, 0.08);
 }
 
@@ -919,8 +1009,27 @@ body.calm-home .site-footer {
   outline: none;
 }
 
+body.calm-site .footer-links a:hover,
+body.calm-site .footer-links a:focus-visible {
+  color: #fff6df;
+}
+
 .reveal-soft {
   animation: reveal-soft 900ms ease both;
+}
+
+.reveal-item {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @keyframes moon-breathe {
@@ -1002,7 +1111,7 @@ body.calm-home.is-awake .moon-core {
     transition: opacity 180ms ease, transform 180ms ease;
   }
 
-  body.calm-home .site-nav {
+  body.calm-site .site-nav {
     border-color: rgba(246, 230, 175, 0.12);
     background: rgba(16, 27, 26, 0.96);
   }
@@ -1024,16 +1133,25 @@ body.calm-home.is-awake .moon-core {
   }
 
   .quiet-orbit {
-    width: min(92vw, 430px);
-    transform: translate(-50%, -58%);
+    top: 16%;
+    left: 50%;
+    width: min(58vw, 240px);
+    opacity: 0.24;
+    transform: translate(-50%, 0);
   }
 
   .hero-copy {
-    padding: 30px 0;
+    width: min(100%, 32rem);
+    padding: 188px 18px 18px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .hero-poem {
     line-height: 1.95;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .quiet-check,
@@ -1056,6 +1174,12 @@ body.calm-home.is-awake .moon-core {
 
   .page-hero {
     padding: 82px 0 38px;
+  }
+
+  body.calm-site.inner-page .page-hero .section-shell.narrow,
+  body.calm-site.inner-page .quiet-content .section-shell.text-flow,
+  body.calm-site.inner-page .quiet-content > .section-shell:not(.contact-shell) {
+    padding: 26px 22px;
   }
 
   .site-footer-inner {
@@ -1105,6 +1229,11 @@ body.calm-home.is-awake .moon-core {
     opacity: 1;
     transform: none;
     pointer-events: auto;
+  }
+
+  .reveal-item {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 
