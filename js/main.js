@@ -217,38 +217,86 @@
       }
     });
 
+    let isPointerDown = false;
     let isDragging = false;
     let startX = 0;
     let startScrollLeft = 0;
+    let pointerId = null;
+    let dragDistance = 0;
+    let suppressClick = false;
 
     viewport.addEventListener("pointerdown", (event) => {
       if (event.pointerType === "touch") return;
-      isDragging = true;
+      if (event.button !== 0) return;
+      if (event.target.closest("a, button")) return;
+      isPointerDown = true;
+      isDragging = false;
+      dragDistance = 0;
+      pointerId = event.pointerId;
       startX = event.clientX;
       startScrollLeft = viewport.scrollLeft;
-      viewport.setPointerCapture?.(event.pointerId);
-      viewport.classList.add("is-dragging");
     });
 
     viewport.addEventListener("pointermove", (event) => {
-      if (!isDragging) return;
+      if (!isPointerDown) return;
       const deltaX = event.clientX - startX;
+      dragDistance = Math.abs(deltaX);
+
+      if (!isDragging && dragDistance > 6) {
+        isDragging = true;
+        suppressClick = true;
+        viewport.setPointerCapture?.(pointerId);
+        viewport.classList.add("is-dragging");
+      }
+
+      if (!isDragging) return;
       viewport.scrollLeft = startScrollLeft - deltaX;
     });
 
     function stopDragging(event) {
-      if (!isDragging) return;
+      if (!isPointerDown && !isDragging) return;
+      isPointerDown = false;
+      if (isDragging) {
+        viewport.classList.remove("is-dragging");
+        viewport.releasePointerCapture?.(pointerId ?? event.pointerId);
+        updateDots();
+      }
       isDragging = false;
-      viewport.classList.remove("is-dragging");
-      viewport.releasePointerCapture?.(event.pointerId);
-      updateDots();
+      pointerId = null;
+      window.setTimeout(() => {
+        suppressClick = false;
+      }, 0);
     }
 
     viewport.addEventListener("pointerup", stopDragging);
     viewport.addEventListener("pointercancel", stopDragging);
     viewport.addEventListener("pointerleave", (event) => {
-      if (!isDragging) return;
+      if (!isPointerDown && !isDragging) return;
       stopDragging(event);
+    });
+
+    viewport.addEventListener("click", (event) => {
+      if (!suppressClick) return;
+      event.preventDefault();
+      event.stopPropagation();
+    }, true);
+
+    slides.forEach((slide) => {
+      const href = slide.dataset.href;
+      if (!href) return;
+
+      slide.addEventListener("click", (event) => {
+        if (suppressClick) return;
+        if (event.target.closest("a, button")) return;
+        window.location.href = href;
+      });
+
+      slide.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        if (suppressClick) return;
+        event.preventDefault();
+        window.location.href = href;
+      });
     });
 
     updateDots(0);
