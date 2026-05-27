@@ -917,16 +917,30 @@ body.calm-site.inner-page .quiet-content {
 }
 
 body.calm-site.inner-page .page-hero .section-shell.narrow {
-  max-width: 860px;
+  max-width: 920px;
+}
+
+body.calm-site.inner-page .page-hero .eyebrow {
+  margin-bottom: 18px;
+  letter-spacing: 0.12em;
+  text-transform: none;
 }
 
 body.calm-site.inner-page .page-hero h1 {
-  max-width: 14ch;
-  font-size: clamp(34px, 5.4vw, 64px);
+  max-width: 10.5ch;
+  margin: 0;
+  font-size: clamp(32px, 4.4vw, 54px);
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
 body.calm-site.inner-page .page-lead {
-  max-width: 40rem;
+  max-width: 32rem;
+  margin-top: 18px;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.9;
+  text-wrap: pretty;
 }
 
 body.calm-site.inner-page .contact-shell {
@@ -1990,9 +2004,15 @@ body[data-page="home"] .night-hero__poem p {
   }
 
   body.calm-site.inner-page .page-hero h1 {
-    max-width: 11ch;
-    font-size: clamp(2rem, 9vw, 2.8rem);
-    line-height: 1.12;
+    max-width: 9.2ch;
+    font-size: clamp(1.95rem, 8.4vw, 2.55rem);
+    line-height: 1.26;
+    letter-spacing: -0.02em;
+  }
+
+  body.calm-site.inner-page .page-hero .eyebrow {
+    margin-bottom: 14px;
+    letter-spacing: 0.1em;
   }
 
   body.calm-site.inner-page .page-lead,
@@ -2003,6 +2023,13 @@ body[data-page="home"] .night-hero__poem p {
   body.calm-site.inner-page .contact-aside p {
     font-size: 16px;
     line-height: 1.85;
+  }
+
+  body.calm-site.inner-page .page-lead {
+    max-width: 100%;
+    margin-top: 16px;
+    font-size: 15.5px;
+    line-height: 1.9;
   }
 
   body.calm-site.inner-page .layer-card,
