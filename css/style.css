@@ -180,6 +180,7 @@ body.calm-site .nav-toggle {
   align-items: center;
   gap: 12px;
   color: var(--deep);
+  min-width: 0;
 }
 
 .brand-mark {
@@ -200,6 +201,7 @@ body.calm-site .nav-toggle {
 .brand-text strong {
   font-size: 16px;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .brand-text span {
@@ -1065,6 +1067,28 @@ body.calm-site.inner-page .hero-split--soft .hero-split__aside .soft-button {
   margin-top: 20px;
 }
 
+body.thanks-page .page-main {
+  min-height: auto;
+}
+
+body.thanks-page .thanks-followup {
+  padding-top: 0;
+}
+
+body.thanks-page .thanks-followup .section-shell {
+  max-width: 760px;
+}
+
+body.thanks-page .thanks-followup .soft-note {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+body.value-page .text-flow .soft-note {
+  margin-top: 32px;
+  margin-bottom: 0;
+}
+
 body.calm-site.inner-page .contact-shell {
   padding: 0;
   border: 0;
@@ -1127,6 +1151,12 @@ body.calm-site .site-footer {
   justify-content: space-between;
   gap: 24px;
   flex-wrap: wrap;
+}
+
+.site-footer-inner p {
+  margin: 0;
+  max-width: 40rem;
+  line-height: 1.8;
 }
 
 .footer-links {
@@ -1330,6 +1360,21 @@ body.calm-home.is-awake .moon-core {
     width: min(calc(100% - 28px), var(--max));
   }
 
+  .site-header-inner {
+    gap: 8px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .brand-text strong {
+    max-width: calc(100vw - 172px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 13.5px;
+  }
+
   h1 {
     font-size: 36px;
   }
@@ -1348,6 +1393,20 @@ body.calm-home.is-awake .moon-core {
 
   .next-steps {
     align-items: stretch;
+  }
+
+  .site-footer {
+    padding: 32px 0 36px;
+  }
+
+  .site-footer-inner {
+    gap: 14px;
+    justify-items: start;
+  }
+
+  .footer-links {
+    gap: 10px 14px;
+    font-size: 14px;
   }
 }
 
@@ -1478,24 +1537,24 @@ body[data-page="home"] .soft-button.secondary:focus-visible {
 }
 
 .night-hero {
-  min-height: calc(100vh - 74px);
+  min-height: calc(100svh - 74px);
   display: grid;
   align-items: center;
-  padding: 88px 0 44px;
+  padding: 54px 0 28px;
 }
 
 .night-hero__shell {
   position: relative;
   display: grid;
   align-items: center;
-  min-height: calc(100vh - 162px);
+  min-height: calc(100svh - 156px);
 }
 
 .night-hero__copy {
   position: relative;
   z-index: 1;
   width: min(100%, 35rem);
-  padding: 1.2rem 0 3rem;
+  padding: 0.8rem 0 2rem;
 }
 
 body[data-page="home"] .night-hero .eyebrow,
@@ -1543,7 +1602,7 @@ body[data-page="home"] .night-hero h1 {
 
 .night-moon {
   position: absolute;
-  top: 48%;
+  top: 46%;
   right: 5%;
   width: min(42vw, 420px);
   aspect-ratio: 1;
@@ -1939,11 +1998,11 @@ body[data-page="home"] .text-link::after {
 
 @media (max-width: 900px) {
   .night-hero {
-    padding-top: 68px;
+    padding-top: 42px;
   }
 
   .night-moon {
-    top: 10px;
+    top: 0;
     right: 50%;
     width: min(62vw, 280px);
     transform: translateX(50%);
@@ -1951,7 +2010,7 @@ body[data-page="home"] .text-link::after {
   }
 
   .night-hero__copy {
-    padding-top: 210px;
+    padding-top: 182px;
     margin: 0 auto;
     text-align: center;
   }
@@ -1977,6 +2036,15 @@ body[data-page="home"] .text-link::after {
     width: min(calc(100% - 24px), 1160px);
   }
 
+  .night-hero {
+    min-height: auto;
+    padding-bottom: 18px;
+  }
+
+  .night-hero__shell {
+    min-height: auto;
+  }
+
   .night-state,
   .night-routes,
   .night-work {
@@ -1999,6 +2067,13 @@ body[data-page="home"] .text-link::after {
   .work-card .text-link,
   body[data-page="home"] .soft-button {
     width: 100%;
+  }
+
+  body[data-page="home"] .night-hero .soft-button.primary {
+    width: auto;
+    min-width: 12rem;
+    padding-inline: 26px;
+    margin-inline: auto;
   }
 
   .work-carousel__controls {
