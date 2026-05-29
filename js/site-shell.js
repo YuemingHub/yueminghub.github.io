@@ -3,11 +3,11 @@
   const prefix = isSubPath ? "../" : "";
 
   const navItems = [
-    ["index.html#compass", "精神坐标"],
-    ["index.html#system", "成长系统"],
-    ["index.html#case-lab", "样本库"],
-    ["index.html#works", "作品"],
-    ["index.html#portal", "连接"]
+    ["index.html#compass", "站点职责"],
+    ["index.html#system", "系统档案"],
+    ["index.html#case-lab", "研究边界"],
+    ["index.html#works", "作品地图"],
+    ["index.html#portal", "入口"]
   ];
 
   const current = location.pathname.split("/").pop() || "index.html";
@@ -46,7 +46,7 @@
     footer.innerHTML = `
       <footer class="site-footer">
         <div class="site-footer-inner">
-          <p>© ${new Date().getFullYear()} YuemingHub。在草台世界里，认真搭建一套面向真实成长的个人宇宙。</p>
+          <p>© ${new Date().getFullYear()} YuemingHub。把长期产出整理成清楚、克制、可进入的作品索引。</p>
           <div class="footer-links">
             <a href="https://github.com/YuemingHub">GitHub</a>
             <a href="https://yueminghub.github.io/yueming/">向未来家庭教育</a>
