@@ -125,6 +125,29 @@
     });
   }
 
+  function initCosmosInteractions() {
+    if (document.body.dataset.page !== "cosmos") return;
+    if (prefersReducedMotion || !window.matchMedia("(pointer: fine)").matches) return;
+
+    window.addEventListener("pointermove", (event) => {
+      document.body.style.setProperty("--cursor-x", `${event.clientX}px`);
+      document.body.style.setProperty("--cursor-y", `${event.clientY}px`);
+    }, { passive: true });
+
+    document.querySelectorAll(".interactive-card").forEach((card) => {
+      card.addEventListener("pointermove", (event) => {
+        const rect = card.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `rotateX(${(-y * 4).toFixed(2)}deg) rotateY(${(x * 5).toFixed(2)}deg) translateY(-5px)`;
+      });
+
+      card.addEventListener("pointerleave", () => {
+        card.style.transform = "";
+      });
+    });
+  }
+
   function initWorkCarousel() {
     if (document.body.dataset.page !== "home") return;
 
@@ -285,6 +308,7 @@
   }
 
   initRevealItems();
+  initCosmosInteractions();
   initNightHome();
   initHomeStateChoice();
   initWorkCarousel();
