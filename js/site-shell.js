@@ -3,11 +3,11 @@
   const prefix = isSubPath ? "../" : "";
 
   const navItems = [
-    ["index.html#compass", "这里是什么"],
-    ["index.html#system", "成长系统"],
-    ["index.html#case-lab", "样本研究"],
-    ["index.html#works", "小宇宙地图"],
-    ["index.html#portal", "开始进入"]
+    ["index.html#why", "为什么做"],
+    ["index.html#different", "不同之处"],
+    ["index.html#method", "方法资产"],
+    ["index.html#works", "我的项目"],
+    ["index.html#future", "长期方向"]
   ];
 
   const current = location.pathname.split("/").pop() || "index.html";
@@ -22,7 +22,7 @@
             <span class="brand-mark" aria-hidden="true"></span>
             <span class="brand-text">
               <strong>YuemingHub</strong>
-              <span>小宇宙集合 · 作品入口</span>
+              <span>月明的小宇宙 · 方法与项目</span>
             </span>
           </a>
 
@@ -46,7 +46,7 @@
     footer.innerHTML = `
       <footer class="site-footer">
         <div class="site-footer-inner">
-          <p>© ${new Date().getFullYear()} YuemingHub。把家庭教育、个人工具、成长系统、样本研究和 AI 协作作品，整理成清楚、可进入的公开小宇宙。</p>
+          <p>© ${new Date().getFullYear()} YuemingHub。这里整理月明的家庭教育方法、真实一线经验、个人工具、AI 实验和正在搭建的向未来。</p>
           <div class="footer-links">
             <a href="https://github.com/YuemingHub">GitHub</a>
             <a href="https://yueminghub.github.io/yueming/">向未来家庭教育</a>
